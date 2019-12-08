@@ -253,5 +253,6 @@ def team_colors(team_name)
     team.each do |team_colors|
       team_colors[:colors]
       binding.pry
+    end
   end
 end
