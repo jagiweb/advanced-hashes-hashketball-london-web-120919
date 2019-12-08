@@ -279,13 +279,13 @@ def player_numbers(team_name)
 end
 
 def player_stats(players_name)
+  new_hash = {}
   game_hash.each do |place, team|
     team.each do |attribute, data|
       if attribute == :players
         data.each do |player|
-          binding.pry
           if player[:player_name] == players_name
-
+            new_hash << player
           end
         end
       end
