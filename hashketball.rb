@@ -250,6 +250,7 @@ end
 
 def team_colors(team_name)
   game_hash.each do |place, team|
-    binding.pry
+    team.each do |team_colors|
+      team_colors[:colors]
   end
 end
