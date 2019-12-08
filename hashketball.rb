@@ -118,25 +118,16 @@ def game_hash
   }
 end
 
-# def num_points_scored(players_name)
-#   game_hash.each do |place, team|
-#     team.each do |attribute, data|
-#       if attribute == :players
-#         data.each do |player|
-#           if player[:player_name] == players_name
-#             return player[:points]
-#           end
-#         end
-#       end
-#     end
-#   end
-# end
-def num_points_scored(name)
-  hash = game_hash
-  hash.each do |location, info|
-    info.each do |attribute, stuff|
-      if stuff.include?(name)
-       return hash[location][attribute][name][:points]
+def num_points_scored(players_name)
+  game_hash.each do |place, team|
+    team.each do |attribute, data|
+      binding.pry
+      if attribute == :players
+        data.each do |player|
+          if player[:player_name] == players_name
+            return player[:points]
+          end
+        end
       end
     end
   end
