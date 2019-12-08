@@ -266,8 +266,10 @@ def player_numbers(team_name)
   game_hash.map do |place, team|
     if team[:team_name] == team_name
       team.each do |attribute, data|
-        if attribute == :player_name
-          attribute[:player_name]
+        if attribute == :players
+          data.each do |player|
+            return player[:number]
+          end
         end
       end
     end
